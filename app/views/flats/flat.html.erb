@@ -1,0 +1,25 @@
+<div>
+  <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" class="img-thumbnail" alt="...">
+</div>
+
+<div>
+  <h1>Welcome to: <%=@flat.name%></h1>
+  <h2>Address: <%=@flat.address %></h2>
+</div>
+
+
+<div>
+  <h2>Description: <%=@flat.description %></h2>
+  <h2>Price: <%=@flat.price_per_night %></h2>
+  <h2>Guests: <%=@flat.number_of_guests %></h2>
+</div>
+
+
+  <%= link_to "Go Back", flats_path, class: "btn btn-flat"%>
+
+  <%= link_to "Edit", edit_path, class: "btn btn-flat"%>
+
+  <%= link_to "Delete #{@flat.name}",
+            flat_path(@flat),
+            method: :delete,
+            data: { confirm: "Are you sure?" },class: "btn btn-flat" %>
